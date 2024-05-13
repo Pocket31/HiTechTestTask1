@@ -2,7 +2,7 @@
 <header>
     <nav class="navbar navbar-light" style="background-color: lightskyblue">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'users:index' %}">
+            <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="{% static 'img/logo.png' %}" alt="" width="30" height="30" class="d-inline-block align-top">
 
             </a>
@@ -13,7 +13,7 @@
 
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link {% if view_name  == 'posts:profile' %} active {% endif %}"
+                    <a class="nav-link {% if view_name  == 'users:profile' %} active {% endif %}"
                         href="{% url 'users:profile' user.username %}">Мой профиль</a>
                 </li>
  <li class="nav-item">
@@ -23,7 +23,7 @@
                 </li>
  <li class="nav-item">
                     <a class="nav-link {% if view_name  ==  'users:profile_edit' %} active {% endif %}"
-                        href="{% url 'users:users' %}">Список пользователей</a>
+                        href="{% url 'users:users_list' %}">Список пользователей</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if view_name  ==  'users:password_change_form' %} active {% endif %}"
@@ -38,11 +38,11 @@
                     {% else %}
                 <li class="nav-item">
                     <a class="nav-link {% if view_name  ==  'users:login' %} active {% endif %}"
-                        href="{% url 'login' %}">Войти</a>
+                        href="{% url 'users:login' %}">Войти</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if view_name  ==  'users:signup' %} active {% endif %}"
-                        href="{% url 'users:signup' %}">Регистрация</a>
+                        href="{% url 'users:register' %}">Регистрация</a>
                 </li>
                 {% endif %}
             </ul>

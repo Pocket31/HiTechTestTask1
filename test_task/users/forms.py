@@ -12,6 +12,12 @@ from .utils import send_email_for_verify
 User = get_user_model()
 
 
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', ]
+
+
 class AuthenticationForm(DjangoAuthenticationForm):
 
     def clean(self):

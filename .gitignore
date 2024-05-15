@@ -133,3 +133,5 @@ dmypy.json
 
 *.sqlite3
 .idea
+data.json
+test_task/test_task/config.py
